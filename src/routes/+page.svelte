@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	export let data;
+	$: ({ user } = data);
+</script>
+
+<h1>Welcome to Supabase!</h1>
+{#if user}
+	<p class="text-white">{user.email}</p>
+{/if}
